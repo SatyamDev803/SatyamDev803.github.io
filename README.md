@@ -1,49 +1,35 @@
-# Minimalist Portfolio Website
+# Satyam Sharma's Portfolio Website
 
-A clean, modern portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and dark/light theme support.
+A clean, modern portfolio for a Software Engineer specializing in AI & Backend development. Built with Next.js and Tailwind CSS, it features smooth animations and dark/light theme support.
 
-## ✨ Features
+## Features
 
-- **Minimalist Design** - Clean typography with Geist font and strategic use of whitespace
-- **Responsive Layout** - Mobile-first design that works on all devices
-- **Theme Toggle** - Seamless dark/light mode switching
-- **Smooth Animations** - Subtle scroll-triggered animations and hover effects
-- **Modern Stack** - Built with Next.js 15, TypeScript, and Tailwind CSS
+- **Minimalist Design** - Clean, modern typography and a focus on content.
+- **Responsive Layout** - A mobile-first design that adapts seamlessly to all screen sizes.
+- **Theme Toggle** - A functional dark/light mode switcher.
+- **Smooth Animations** - Subtle scroll-triggered animations and hover effects enhance the user experience.
+- **Modern Tech Stack** - Built with the latest standards, including Next.js, React, and TypeScript.
 
-## 🚀 Built With
+## Built With
 
-- [Next.js](https://nextjs.org/) - React framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-- [v0.dev](https://v0.dev/) - AI-powered development
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-## 📦 Getting Started
+## Getting Started
 
-\`\`\`bash
+To run this project locally:
+
+```bash
 # Clone the repository
-git clone https://github.com/felixmacaspac/v0-minimalist-portfolio.git
+git clone [https://github.com/SatyamDev803/satyam-portfolio.git](https://github.com/SatyamDev803/satyam-portfolio.git)
 
-# Install dependencies
-npm install
+# Navigate into the project directory
+cd satyam-portfolio
 
-# Run development server
-npm run dev
-\`\`\`
+# Install dependencies (using pnpm as per your lockfile)
+pnpm install
 
-Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
-
-## 🎨 Customization
-
-The portfolio is designed to be easily customizable:
-
-- Update personal information in `app/page.tsx`
-- Modify colors and styling in `app/globals.css`
-- Add or remove sections as needed
-
-## 📄 License
-
-Open source and available under the [MIT License](LICENSE).
-
----
-
-**Built with ❤️ using [v0.dev](https://v0.dev) by Felix Macaspac**
+# Run the development server
+pnpm dev
