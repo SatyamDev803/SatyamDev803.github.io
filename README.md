@@ -1,4 +1,4 @@
-# Satyam Sharma's Portfolio Website
+# Portfolio Website
 
 A clean, modern portfolio for a Software Engineer specializing in AI & Backend development. Built with Next.js and Tailwind CSS, it features smooth animations and dark/light theme support.
 
