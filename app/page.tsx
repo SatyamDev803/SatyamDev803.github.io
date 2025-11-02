@@ -12,23 +12,28 @@ export default function Home() {
   }, [isDark]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up");
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3, rootMargin: "0px 0px -20% 0px" }
-    );
+    // Add a small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in-up");
+              setActiveSection(entry.target.id);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
 
-    sectionsRef.current.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+      sectionsRef.current.forEach((section) => {
+        if (section) observer.observe(section);
+      });
 
-    return () => observer.disconnect();
+      return () => observer.disconnect();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleTheme = () => {
@@ -36,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
       <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-10 hidden lg:block">
         <div className="flex flex-col gap-4">
           {["intro", "work", "education", "projects", "connect"].map(
@@ -216,12 +221,11 @@ export default function Home() {
           ref={(el) => {
             sectionsRef.current[1] = el;
           }}
-          className="py-20 sm-py-32 opacity-0"
+          className="py-20 sm:py-32 opacity-0"
         >
           <div className="space-y-12 sm:space-y-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <h2 className="text-3xl sm:text-4xl font-light">Experience</h2>
-              {/* <div className="text-sm text-muted-foreground font-mono">2024 — 2025</div> */}
             </div>
             <div className="space-y-8 sm:space-y-12">
               {[
@@ -296,7 +300,6 @@ export default function Home() {
           <div className="space-y-12 sm:space-y-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <h2 className="text-3xl sm:text-4xl font-light">Education</h2>
-              {/* <div className="text-sm text-muted-foreground font-mono">2021 — 2024</div> */}
             </div>
             <div className="space-y-8 sm:space-y-12">
               {[
@@ -339,7 +342,7 @@ export default function Home() {
           ref={(el) => {
             sectionsRef.current[3] = el;
           }}
-          className="min-h-screen py-20 sm:py-32 opacity-0"
+          className="py-20 sm:py-32 opacity-0"
         >
           <div className="space-y-12 sm:space-y-16">
             <h2 className="text-3xl sm:text-4xl font-light">Projects</h2>
