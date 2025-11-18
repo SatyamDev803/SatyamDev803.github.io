@@ -12,7 +12,6 @@ export default function Home() {
   }, [isDark]);
 
   useEffect(() => {
-    // Add a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
       const observer = new IntersectionObserver(
         (entries) => {
@@ -58,7 +57,7 @@ export default function Home() {
                     ? "bg-foreground"
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/60"
                 }`}
-                aria-label={`Maps to ${section}`}
+                aria-label={`Navigate to ${section}`}
               />
             )
           )}
@@ -85,20 +84,16 @@ export default function Home() {
               </div>
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Software Engineer (AI & Backend) building intelligent,
-                  data-driven application through
-                  <span className="text-foreground"> AI</span>,
-                  <span className="text-foreground"> ML</span>, and
-                  <span className="text-foreground">
-                    {" "}
-                    scalable backend systems
-                  </span>
-                  .
+                  ML & Backend Engineer building
+                  <span className="text-foreground"> intelligent systems</span> through
+                  <span className="text-foreground"> AI/ML</span>,
+                  <span className="text-foreground"> distributed computing</span>, and
+                  <span className="text-foreground"> scalable architectures</span>.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    Available for work
+                    Available for opportunities
                   </div>
                   <div>Mumbai, India</div>
                 </div>
@@ -122,19 +117,18 @@ export default function Home() {
                   )}
                 </div>
                 <div className="text-sm text-muted-foreground font-mono">
-                  ML and AI
+                  AI & ML
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
                     "TensorFlow",
                     "Keras",
-                    "scikit-learn",
+                    "spaCy",
                     "LangChain",
-                    "RAG",
-                    "LLM",
-                    "Optuna",
-                    "Pandas",
-                    "Plotly",
+                    "Ray",
+                    "Celery",
+                    "scikit-learn",
+                    "pgvector",
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -145,49 +139,17 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="text-sm text-muted-foreground font-mono">
-                  Backend
+                  Backend & Databases
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
                     "FastAPI",
+                    "PostgreSQL",
+                    "Redis",
+                    "MongoDB",
                     "Django",
+                    "Flask",
                     "SQLAlchemy",
-                    "Alembic",
-                    "WebSockets",
-                    "JWT",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <div className="text-sm text-muted-foreground font-mono">
-                  Database
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {["PostgreSQL", "MongoDB", "SQLite", "Redis"].map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <div className="text-sm text-muted-foreground font-mono">
-                  DevOps
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "Docker",
-                    "Nginx",
-                    "Gunicorn",
-                    "AWS (EC2, S3)",
-                    "GitHub Actions (CI/CD)",
-                    "Linux",
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -201,7 +163,27 @@ export default function Home() {
                   Frontend
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {["Next.js", "React", "Tailwind CSS"].map((skill) => (
+                  {["React", "Next.js", "Tailwind CSS"].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <div className="text-sm text-muted-foreground font-mono">
+                  DevOps & Tools
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Docker",
+                    "AWS",
+                    "GitHub Actions",
+                    "Git",
+                    "Linux",
+                    "Nginx",
+                  ].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
@@ -231,18 +213,22 @@ export default function Home() {
               {[
                 {
                   year: "Dec 24 - May 25",
-                  role: "ML Engineer",
+                  role: "ML Intern",
                   company: "Kredit (Startup)",
                   description: [
-                    "Designed an AI-driven credit scoring system for gig economy workers, improving loan accessibility through automated, data-driven assessment.",
-                    "Improved the core credit model's predictive accuracy by 40% (R2) by leveraging feature engineering and data preprocessing pipelines.",
+                    "Engineered AI-driven credit scoring system using ensemble methods (XGBoost, LightGBM) and neural networks, processing synthetic datasets across 4 data categories with 50+ engineered features.",
+                    "Improved model predictive accuracy from 30% to 70%+ R² through advanced feature engineering including polynomial transformations, K-Means clustering, and iterative imputation.",
+                    "Built automated data preprocessing pipeline with Python and Pandas, integrating diverse data sources including government APIs, CIBIL reports, and synthetically generated datasets.",
+                    "Developed fallback risk assessment API with FastAPI leveraging alternative data sources, achieving 85%+ prediction accuracy for users lacking traditional credit history.",
                   ],
                   tech: [
+                    "XGBoost",
+                    "LightGBM",
                     "TensorFlow",
-                    "Keras",
                     "Python",
+                    "FastAPI",
+                    "Pandas",
                     "scikit-learn",
-                    "Neural Networks",
                   ],
                 },
               ].map((job, index) => (
@@ -277,7 +263,7 @@ export default function Home() {
                     {job.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:border-muted-foreground/50 transition-colors duration-500"
+                        className="px-2 py-1 text-xs text-muted-foreground rounded"
                       >
                         {tech}
                       </span>
@@ -305,9 +291,11 @@ export default function Home() {
               {[
                 {
                   degree: "Bachelor of Science in Computer Science",
+                  gpa: "GPA: 3.57 / 4.00",
                   college: "University of Mumbai",
                   duration: "Jun 2021 – May 2024",
                   location: "Mumbai, India",
+                  coursework: "Data Structures & Algorithms, Artificial Intelligence, Operating Systems, Computer Networks, Database Systems, Software Engineering, Cloud Computing, Data Science",
                 },
               ].map((edu, index) => (
                 <div
@@ -319,15 +307,18 @@ export default function Home() {
                       {edu.duration}
                     </div>
                   </div>
-                  <div className="lg:col-span-10 space-y-2">
+                  <div className="lg:col-span-10 space-y-3">
                     <div>
                       <h3 className="text-lg sm:text-xl font-medium">
                         {edu.degree}
                       </h3>
                       <div className="text-muted-foreground">{edu.college}</div>
                       <div className="text-sm text-muted-foreground">
-                        {edu.location}
+                        {edu.location} • {edu.gpa}
                       </div>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      <span className="font-medium">Relevant Coursework:</span> {edu.coursework}
                     </div>
                   </div>
                 </div>
@@ -345,62 +336,42 @@ export default function Home() {
           className="py-20 sm:py-32 opacity-0"
         >
           <div className="space-y-12 sm:space-y-16">
-            <h2 className="text-3xl sm:text-4xl font-light">Projects</h2>
+            <h2 className="text-3xl sm:text-4xl font-light">Featured Projects</h2>
             <div className="grid gap-8 sm:gap-10">
               {[
                 {
-                  title: "AvaxPay — Decentralized Payment Link Platform",
+                  title: "TalentAI — AI-Powered Recruitment Platform",
                   description: [
-                    "AvaxPay is a decentralized payment platform built on Avalanche blockchain that enables users to create shareable payment links and QR codes for instant crypto payments.",
-                    "I built a full-stack application using Next.js 16 frontend with TypeScript, Tailwind CSS, and ShadCN UI components. Integrated Wagmi v2 and RainbowKit for seamless wallet connections supporting MetaMask, Core, and WalletConnect.",
-                    "The platform features real-time QR code generation, smart contract integration for payment processing, multi-token support (AVAX, USDC, USDT), and a comprehensive payment dashboard with analytics tracking on Avalanche Fuji Testnet.",
+                    "Architected microservices platform with 4 FastAPI services using distributed Ray actors for parallel candidate-job matching with intelligent scoring algorithms.",
+                    "Engineered NLP pipeline with spaCy and Sentence-Transformers to extract structured data from resumes (PDF, DOCX, TXT), generating 384-dimensional embeddings and achieving 90%+ match accuracy.",
+                    "Integrated LangChain with OpenAI and Google Gemini APIs for contextual match explanations, implementing semantic search with pgvector to reduce candidate search time by 75%.",
+                    "Deployed async processing pipeline with Celery and Redis for background resume parsing, serving 60+ RESTful endpoints with sub-200ms response times and 85%+ test coverage.",
                   ],
                   tech: [
-                    "Next.js",
-                    "TypeScript",
-                    "Tailwind CSS",
-                    "ShadCN UI",
-                    "Wagmi",
-                    "RainbowKit",
-                    "Avalanche",
-                    "Smart Contracts",
+                    "FastAPI",
+                    "PostgreSQL",
+                    "Ray",
+                    "spaCy",
+                    "LangChain",
+                    "Celery",
+                    "pgvector",
                   ],
-                  liveUrl: "https://avax-pay.vercel.app/",
-                  githubUrl: "https://github.com/SatyamDev803/AvaxPay",
-                },
-                {
-                  title: "Nexa — DeFi Yield Aggregator",
-                  description: [
-                    "Nexa is a full-stack decentralized application that aggregates yield across multiple blockchains.",
-                    "I built a scalable backend using Node.js and Express.js, integrated financial APIs (DefiLlama, 1Click Intents), and designed a responsive frontend with Next.js and TailwindCSS.",
-                    "The platform dynamically ranks yield strategies and supports real-time cross-chain transactions via the NEAR Wallet Selector.",
-                  ],
-                  tech: [
-                    "Next.js",
-                    "TypeScript",
-                    "Node.js",
-                    "Express.js",
-                    "NEAR Protocol",
-                    "TailwindCSS",
-                  ],
-                  liveUrl: "https://nexa-three-eta.vercel.app/",
-                  githubUrl: "https://github.com/SatyamDev803/Nexa",
+                  liveUrl: null,
+                  githubUrl: "https://github.com/SatyamDev803/TalentAI",
                 },
                 {
                   title: "CogniCart — AI E-Commerce Analytics Platform",
                   description: [
-                    "CogniCart transforms e-commerce data into actionable insights using AI.",
-                    "I developed a high-performance FastAPI backend, containerized with Docker, and built a responsive analytics dashboard with Next.js.",
-                    "The platform features an AI sales assistant powered by a Retrieval-Augmented Generation (RAG) pipeline, enabling natural-language queries over sales data for real-time business intelligence.",
+                    "Built full-stack analytics dashboard with FastAPI backend and Next.js SSR frontend, implementing real-time CRUD operations via RESTful APIs for transaction analysis.",
+                    "Implemented AI sales agent with RAG pipeline for natural language querying, reducing query response time by 60% using vector embeddings.",
+                    "Containerized application with Docker Compose, reducing environment setup time by 75% and ensuring production consistency.",
                   ],
                   tech: [
                     "FastAPI",
                     "Next.js",
                     "SQLAlchemy",
-                    "Pydantic",
                     "Docker",
                     "RAG",
-                    "LLMs",
                   ],
                   liveUrl: null,
                   githubUrl: "https://github.com/SatyamDev803/cognicart",
@@ -408,20 +379,38 @@ export default function Home() {
                 {
                   title: "CryptexAI — Cryptocurrency Price Prediction Platform",
                   description: [
-                    "CryptexAI predicts cryptocurrency price trends using deep learning models like LSTM, GRU, and Transformers.",
-                    "I architected both the backend (FastAPI serving ML inferences) and a live React dashboard visualizing data streams via WebSockets.",
-                    "Automated hyperparameter tuning with Optuna improved model performance, and the entire system was deployed as a scalable, containerized service.",
+                    "Developed predictive platform using LSTM, GRU, and Transformer models to forecast cryptocurrency prices, achieving 92% directional accuracy on 5+ years of historical data.",
+                    "Built real-time visualization system with WebSockets streaming live market data with low-latency performance.",
+                    "Engineered backtesting framework validating 20+ trading strategies and leveraged Optuna for hyperparameter tuning, improving prediction precision by 35%.",
                   ],
                   tech: [
+                    "TensorFlow",
                     "FastAPI",
                     "React",
-                    "TensorFlow",
-                    "Optuna",
-                    "Docker",
                     "WebSockets",
+                    "Docker",
+                    "Optuna",
                   ],
                   liveUrl: null,
                   githubUrl: "https://github.com/SatyamDev803/CryptexAI",
+                },
+                {
+                  title: "AvaxPay — Decentralized Payment Link Platform",
+                  description: [
+                    "Built a decentralized payment platform on Avalanche blockchain enabling users to create shareable payment links and QR codes for instant crypto payments.",
+                    "Integrated Wagmi v2 and RainbowKit for seamless wallet connections supporting MetaMask, Core, and WalletConnect.",
+                    "Features real-time QR code generation, smart contract integration, multi-token support (AVAX, USDC, USDT), and comprehensive payment dashboard with analytics tracking.",
+                  ],
+                  tech: [
+                    "Next.js",
+                    "TypeScript",
+                    "Wagmi",
+                    "RainbowKit",
+                    "Avalanche",
+                    "Smart Contracts",
+                  ],
+                  liveUrl: "https://avax-pay.vercel.app/",
+                  githubUrl: "https://github.com/SatyamDev803/AvaxPay",
                 },
               ].map((project, index) => (
                 <article
@@ -524,8 +513,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Always interested in new opportunities, collaborations, and
-                  conversations about technology and AI.
+                  Open to Backend, ML, and Full-Stack opportunities. Interested in building scalable AI systems and distributed architectures.
                 </p>
                 <div className="space-y-4">
                   <a
@@ -554,7 +542,7 @@ export default function Home() {
             </div>
             <div className="space-y-6 sm:space-y-8">
               <div className="text-sm text-muted-foreground font-mono">
-                ELSEWHERE
+                CONNECT
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -565,11 +553,11 @@ export default function Home() {
                   },
                   {
                     name: "LinkedIn",
-                    handle: "satyam sharma",
+                    handle: "Satyam Sharma",
                     url: "https://www.linkedin.com/in/satyam-sharma-6296781b2/",
                   },
                   {
-                    name: "X.com",
+                    name: "X (Twitter)",
                     handle: "@Satyam_S1603",
                     url: "https://x.com/Satyam_S1603",
                   },
@@ -598,14 +586,16 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
+          </div></section>
 
         <footer className="py-12 sm:py-16 border-t border-border">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
             <div className="space-y-2">
               <div className="text-sm text-muted-foreground">
                 © 2025 Satyam Sharma. All rights reserved.
+              </div>
+              <div className="text-xs text-muted-foreground">
+                Built with Next.js, TypeScript & Tailwind CSS
               </div>
             </div>
             <div className="flex items-center gap-4">
