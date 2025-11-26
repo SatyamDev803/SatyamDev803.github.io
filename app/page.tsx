@@ -87,8 +87,8 @@ export default function Home() {
                   ML & Backend Engineer building
                   <span className="text-foreground"> intelligent systems</span> through
                   <span className="text-foreground"> AI/ML</span>,
-                  <span className="text-foreground"> distributed computing</span>, and
-                  <span className="text-foreground"> scalable architectures</span>.
+                  <span className="text-foreground"> scalable architectures</span>, and
+                  <span className="text-foreground"> data-driven solutions</span>.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
@@ -128,7 +128,7 @@ export default function Home() {
                     "Ray",
                     "Celery",
                     "scikit-learn",
-                    "pgvector",
+                    "XGBoost",
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -173,14 +173,14 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="text-sm text-muted-foreground font-mono">
-                  DevOps & Tools
+                  DevOps & Cloud
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
                     "Docker",
                     "AWS",
                     "GitHub Actions",
-                    "Git",
+                    "CI/CD",
                     "Linux",
                     "Nginx",
                   ].map((skill) => (
@@ -213,22 +213,22 @@ export default function Home() {
               {[
                 {
                   year: "Dec 24 - May 25",
-                  role: "ML Intern",
+                  role: "Software Engineer Intern - Backend & ML",
                   company: "Kredit (Startup)",
                   description: [
-                    "Engineered AI-driven credit scoring system using ensemble methods (XGBoost, LightGBM) and neural networks, processing synthetic datasets across 4 data categories with 50+ engineered features.",
-                    "Improved model predictive accuracy from 30% to 70%+ R² through advanced feature engineering including polynomial transformations, K-Means clustering, and iterative imputation.",
-                    "Built automated data preprocessing pipeline with Python and Pandas, integrating diverse data sources including government APIs, CIBIL reports, and synthetically generated datasets.",
-                    "Developed fallback risk assessment API with FastAPI leveraging alternative data sources, achieving 85%+ prediction accuracy for users lacking traditional credit history.",
+                    "Engineered scalable backend services with automated ETL workflows, increasing data processing throughput by 50% across 4 heterogeneous data sources (Gov APIs, CIBIL, internal datasets).",
+                    "Improved ML scoring performance from 30% to 70%+ R² through data-driven insights and advanced feature engineering (polynomial transforms, clustering, imputation).",
+                    "Developed alternative creditworthiness scoring using behavioral signals, enabling risk evaluation for thin-file borrowers with 85%+ prediction accuracy.",
+                    "Deployed production-grade inference APIs using FastAPI and WebSockets, supporting low-latency real-time scoring integrations with external services.",
                   ],
                   tech: [
-                    "XGBoost",
-                    "LightGBM",
-                    "TensorFlow",
-                    "Python",
                     "FastAPI",
-                    "Pandas",
+                    "Python",
+                    "PostgreSQL",
+                    "TensorFlow",
+                    "WebSockets",
                     "scikit-learn",
+                    "Pandas",
                   ],
                 },
               ].map((job, index) => (
@@ -340,12 +340,12 @@ export default function Home() {
             <div className="grid gap-8 sm:gap-10">
               {[
                 {
-                  title: "TalentAI — AI-Powered Recruitment Platform",
+                  title: "TalentAI — AI Recruitment Platform",
                   description: [
-                    "Architected microservices platform with 4 FastAPI services using distributed Ray actors for parallel candidate-job matching with intelligent scoring algorithms.",
-                    "Engineered NLP pipeline with spaCy and Sentence-Transformers to extract structured data from resumes (PDF, DOCX, TXT), generating 384-dimensional embeddings and achieving 90%+ match accuracy.",
-                    "Integrated LangChain with OpenAI and Google Gemini APIs for contextual match explanations, implementing semantic search with pgvector to reduce candidate search time by 75%.",
-                    "Deployed async processing pipeline with Celery and Redis for background resume parsing, serving 60+ RESTful endpoints with sub-200ms response times and 85%+ test coverage.",
+                    "Architected distributed microservices platform using FastAPI with Ray actors enabling 10k+ parallel candidate-job match evaluations per minute with high availability.",
+                    "Implemented transformer-based embeddings with NLP pipelines achieving 90%+ skill-job match accuracy and efficient resume data extraction.",
+                    "Integrated LLM APIs via LangChain for contextual match explanations, reducing recruiter review effort by 75%.",
+                    "Scaled asynchronous resume parsing using Celery and Redis, maintaining sub-200ms API latency under load.",
                   ],
                   tech: [
                     "FastAPI",
@@ -354,7 +354,7 @@ export default function Home() {
                     "spaCy",
                     "LangChain",
                     "Celery",
-                    "pgvector",
+                    "Redis",
                   ],
                   liveUrl: null,
                   githubUrl: "https://github.com/SatyamDev803/TalentAI",
@@ -362,9 +362,9 @@ export default function Home() {
                 {
                   title: "CogniCart — AI E-Commerce Analytics Platform",
                   description: [
-                    "Built full-stack analytics dashboard with FastAPI backend and Next.js SSR frontend, implementing real-time CRUD operations via RESTful APIs for transaction analysis.",
-                    "Implemented AI sales agent with RAG pipeline for natural language querying, reducing query response time by 60% using vector embeddings.",
-                    "Containerized application with Docker Compose, reducing environment setup time by 75% and ensuring production consistency.",
+                    "Developed full-stack analytics dashboard with indexed relational queries and optimised CRUD APIs enabling real-time insights.",
+                    "Implemented semantic search with vector embeddings and RAG-based natural language querying, accelerating insight discovery by 60%.",
+                    "Containerized services using Docker Compose, delivering 75% faster deployments and environment reproducibility.",
                   ],
                   tech: [
                     "FastAPI",
@@ -372,16 +372,17 @@ export default function Home() {
                     "SQLAlchemy",
                     "Docker",
                     "RAG",
+                    "Vector Embeddings",
                   ],
                   liveUrl: null,
                   githubUrl: "https://github.com/SatyamDev803/cognicart",
                 },
                 {
-                  title: "CryptexAI — Cryptocurrency Price Prediction Platform",
+                  title: "CryptexAI — Cryptocurrency Forecasting Platform",
                   description: [
-                    "Developed predictive platform using LSTM, GRU, and Transformer models to forecast cryptocurrency prices, achieving 92% directional accuracy on 5+ years of historical data.",
-                    "Built real-time visualization system with WebSockets streaming live market data with low-latency performance.",
-                    "Engineered backtesting framework validating 20+ trading strategies and leveraged Optuna for hyperparameter tuning, improving prediction precision by 35%.",
+                    "Deployed ML predictive engines using LSTM, GRU, and Transformer architectures achieving 92% directional accuracy on 5+ years of market data.",
+                    "Served real-time price visualisations through WebSocket streaming with low-latency bidirectional communication.",
+                    "Built backtesting and evaluation framework improving trading outcome precision by 35% and reducing training convergence time by 40% with Optuna.",
                   ],
                   tech: [
                     "TensorFlow",
@@ -513,7 +514,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Open to Backend, ML, and Full-Stack opportunities. Interested in building scalable AI systems and distributed architectures.
+                  Open to Backend, ML, and Full-Stack opportunities. Passionate about building scalable AI systems, distributed architectures, and intelligent solutions.
                 </p>
                 <div className="space-y-4">
                   <a
@@ -586,7 +587,8 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div></section>
+          </div>
+        </section>
 
         <footer className="py-12 sm:py-16 border-t border-border">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
