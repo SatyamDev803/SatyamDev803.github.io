@@ -136,3 +136,35 @@
     }
   }
 }
+
+/* Blog post body (rendered from Markdown) */
+.prose-post {
+  @apply text-muted-foreground leading-relaxed space-y-5;
+}
+.prose-post h2 {
+  @apply text-2xl font-light text-foreground pt-6;
+}
+.prose-post h3 {
+  @apply text-xl font-medium text-foreground pt-4;
+}
+.prose-post a {
+  @apply text-foreground underline underline-offset-4;
+}
+.prose-post ul {
+  @apply list-disc pl-6 space-y-2;
+}
+.prose-post ol {
+  @apply list-decimal pl-6 space-y-2;
+}
+.prose-post code {
+  @apply font-mono text-sm text-foreground;
+}
+.prose-post pre {
+  @apply overflow-x-auto rounded-lg border border-border bg-muted/50 p-4 text-sm;
+}
+.prose-post img {
+  @apply rounded-lg border border-border max-w-full h-auto;
+}
+.prose-post blockquote {
+  @apply border-l-2 border-border pl-4 italic;
+}
