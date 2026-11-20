@@ -1,35 +1,25 @@
-# Portfolio Website
+# satyamdev803.github.io
 
-A clean, modern portfolio for a Software Engineer specializing in AI & Backend development. Built with Next.js and Tailwind CSS, it features smooth animations and dark/light theme support.
+Personal site of Satyam Sharma: https://satyamdev803.github.io
 
-## Features
+Next.js (static export) and Tailwind CSS, deployed to GitHub Pages by
+`.github/workflows/deploy.yml` on every push to `main`.
 
-- **Minimalist Design** - Clean, modern typography and a focus on content.
-- **Responsive Layout** - A mobile-first design that adapts seamlessly to all screen sizes.
-- **Theme Toggle** - A functional dark/light mode switcher.
-- **Smooth Animations** - Subtle scroll-triggered animations and hover effects enhance the user experience.
-- **Modern Tech Stack** - Built with the latest standards, including Next.js, React, and TypeScript.
+## Editing
 
-## Built With
+- **Content** lives in `lib/content.ts`. Every claim must match the verified facts behind
+  the resume. Site text uses no em or en dashes.
+- **Blog posts** are Markdown files in `content/posts/<slug>.md`. Copy
+  `content/posts/_example.md` (files starting with `_` are drafts and are not published).
+- **First post:** also move `templates/blog-post-page.tsx` to `app/blog/[slug]/page.tsx`.
+  Next.js static export fails on a dynamic route with no pages, so that route ships only
+  once a post exists.
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Deployment**: [Vercel](https://vercel.com/)
+## Commands
 
-## Getting Started
-
-To run this project locally:
-
-```bash
-# Clone the repository
-git clone [https://github.com/SatyamDev803/satyam-portfolio.git](https://github.com/SatyamDev803/satyam-portfolio.git)
-
-# Navigate into the project directory
-cd satyam-portfolio
-
-# Install dependencies (using pnpm as per your lockfile)
+```sh
 pnpm install
-
-# Run the development server
-pnpm dev
+pnpm dev        # local preview
+pnpm typecheck
+pnpm build      # writes the static site to out/
+```

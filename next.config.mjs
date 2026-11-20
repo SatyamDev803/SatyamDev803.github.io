@@ -1,13 +1,9 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+  // GitHub Pages serves static files only.
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+};
 
-export default nextConfig
+export default nextConfig;
