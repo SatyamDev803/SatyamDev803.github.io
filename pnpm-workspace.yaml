@@ -1,0 +1,4 @@
+# Build scripts pnpm may run. sharp is skipped: the static export does not optimize images.
+allowBuilds:
+  '@tailwindcss/oxide': true
+  sharp: false
